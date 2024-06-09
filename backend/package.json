@@ -1,0 +1,17 @@
+{
+  "name": "nopasspal_backend",
+  "version": "1.0.0",
+  "description": "backend for nopasspal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yaseen",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "openai": "^4.49.1"
+  }
+}

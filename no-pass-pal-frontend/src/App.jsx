@@ -113,10 +113,12 @@ function App() {
           {validatedText != "" ? <ValidatedText text={validatedText} /> : null}
           <button
             disabled={loading}
-            className="my-8 rounded-none bg-[#ec0000] py-2 px-5 text-lg  w-full border-[3px] border-black h-16  text-black font-bold "
+            className={`my-8 rounded-none ${
+              loading ? "bg-gray-500" : "bg-[#ec0000]"
+            } py-2 px-5 text-lg  w-full border-[3px] border-black h-16  text-black font-bold `}
             onClick={validatePassword}
           >
-            Sign in
+            {loading ? "Validating" : "Sign in"}
           </button>
         </form>
       </div>

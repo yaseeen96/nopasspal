@@ -2,6 +2,7 @@ const express = require("express");
 const OpenAI = require("openai");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const mongoose = require("mongoose");
 
 dotenv.config();
 
@@ -20,14 +21,27 @@ const openai = new OpenAI({
 app.use(express.json());
 app.use(cors());
 
-app.post("/validator", async (req, res) => {
-  const password = req.body.password;
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI, {});
 
-  if (!password) {
-    return res.status(400).send("Password is required");
+const emailSchema = new mongoose.Schema({
+  email: { type: String, required: true },
+});
+
+const Email = mongoose.model("Email", emailSchema);
+
+app.post("/validator", async (req, res) => {
+  const { password, email } = req.body;
+
+  if (!password || !email) {
+    return res.status(400).send("Password and email are required");
   }
 
   try {
+    // Save email to the database
+    const newEmail = new Email({ email });
+    await newEmail.save();
+
     const messages = [
       {
         role: "system",
@@ -52,6 +66,17 @@ app.post("/validator", async (req, res) => {
     res.json({ message: validationMessage });
   } catch (error) {
     console.error("Error validating password:", error);
+    res.status(500).send("Internal server error");
+  }
+});
+
+// New GET endpoint to count emails
+app.get("/email-count", async (req, res) => {
+  try {
+    const emailCount = await Email.countDocuments();
+    res.json({ count: emailCount });
+  } catch (error) {
+    console.error("Error counting emails:", error);
     res.status(500).send("Internal server error");
   }
 });

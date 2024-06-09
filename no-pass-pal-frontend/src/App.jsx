@@ -120,17 +120,25 @@ function App() {
           </button>
         </form>
       </div>
-      <div className="absolute bottom-4 flex flex-row justify-center items-center gap-2">
-        <p>Developed by Yaseen</p>
-        <a href="https://www.linkedin.com/in/syedyaseeen/">
-          <FaLinkedin />
-        </a>
-        <a href="https://www.instagram.com/_port_20_/">
-          <FaInstagram />
-        </a>
-        <a href="https://github.com/yaseeen96">
-          <FaGithub />
-        </a>
+
+      <div className="absolute bottom-8 text-gray-500 ">
+        <div className="flex flex-col">
+          <div className="flex flex-row justify-center items-center gap-2">
+            <p>Designed with ❤️ by Ven</p>
+          </div>
+          <div className="flex flex-row justify-center items-center gap-2">
+            <p>Developed by Yaseen</p>
+            <a href="https://www.linkedin.com/in/syedyaseeen/">
+              <FaLinkedin />
+            </a>
+            <a href="https://www.instagram.com/_port_20_/">
+              <FaInstagram />
+            </a>
+            <a href="https://github.com/yaseeen96">
+              <FaGithub />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -66,7 +66,7 @@ function App() {
           alt="logo"
           className="my-24 px-16"
         />
-        <h3 className="text-xl md:text-2xl my-6 text-center text-gray-700 dark:text-gray-400">
+        <h3 className="text-xl md:text-2xl my-6 text-center text-gray-700 dark:text-gray-400 px-8">
           Your friendly neighbourhood{" "}
           <span className="font-bold text-black dark:text-white">
             password rejector!

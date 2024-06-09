@@ -16,7 +16,7 @@ function App() {
       setLoading(true);
       console.log(password);
       const response = await axios.post(
-        "http://localhost:80/validator",
+        "https://nopasspal-2.onrender.com/validator",
         {
           password: password,
         },

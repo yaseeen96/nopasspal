@@ -39,17 +39,13 @@ function App() {
   return (
     <div className="min-h-screen flex relative z-0 flex-col justify-start items-center text-black dark:bg-black dark:text-white px-12">
       <img
-        src={"src/assets/rick_roll.gif"}
+        src={"assets/rick_roll.gif"}
         alt="never-gonna-give-you-up"
         className="h-screen opacity-5"
       />
       <div className="absolute z-10 flex flex-col items-center">
         <img
-          src={
-            isDarkMode
-              ? "src/assets/logo_white.png"
-              : "src/assets/logo_black.png"
-          }
+          src={isDarkMode ? "assets/logo_white.png" : "assets/logo_black.png"}
           alt="logo"
           className="my-24 px-16"
         />

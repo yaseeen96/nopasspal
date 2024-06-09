@@ -62,19 +62,19 @@ function App() {
       />
       <div className="absolute z-10 flex flex-col items-center">
         <img
-          src={isDarkMode ? "assets/logo_white.png" : "assets/logo_black.png"}
+          src={isDarkMode ? "assets/logo_white.svg" : "assets/logo_black.svg"}
           alt="logo"
-          className="my-24 px-16"
+          className="mt-24 px-16"
         />
-        <h3 className="text-xl md:text-2xl my-6 text-center text-gray-700 dark:text-gray-400 px-8">
-          Your friendly neighbourhood{" "}
+        <h3 className="text-xl md:text-2xl mt-2 mb-4 text-center text-gray-700 dark:text-gray-400 px-8">
+          Your friendly neighbourhood <br />
           <span className="font-bold text-black dark:text-white">
             password rejector!
           </span>
         </h3>
         <form
           onSubmit={validatePassword}
-          className="flex flex-col items-center px-8 text-center w-full"
+          className="flex flex-col items-center px-8 mt-24 text-center w-full"
         >
           <input
             disabled={loading}
@@ -113,9 +113,9 @@ function App() {
           {validatedText != "" ? <ValidatedText text={validatedText} /> : null}
           <button
             disabled={loading}
-            className={`my-8 rounded-none ${
+            className={`my-4 rounded-none  ${
               loading ? "bg-gray-500" : "bg-[#ec0000]"
-            } py-2 px-5 text-lg  w-full border-[3px] border-black h-16  text-black font-bold `}
+            }   px-5 text-lg w-full border-[3px] border-black h-16 text-black font-bold `}
             onClick={validatePassword}
           >
             {loading ? "Validating" : "Sign in"}
